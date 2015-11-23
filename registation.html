@@ -1,0 +1,190 @@
+<html>
+<head>
+<Title>Registration</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	
+<link rel='stylesheet' type='text/css' href='styles.css' />
+	
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	
+<script type='text/javascript' src='menu_jquery.js'></script>
+
+<script>
+function validateForm()
+{
+var msg="Please fill the follwing Field\n";
+var msg1 = msg
+var boxCheck;
+var x=document.form1.first.value;
+if(x==null || x=="")
+{
+msg=msg+"=> First Name\n";
+}
+x=document.form1.last.value;
+if(x==null || x=="")
+{
+msg=msg+"=> Last Name\n";
+}
+for( i=0; i < document.form1.gender.length ;  i++ )
+ {
+     if(document.form1.gender[i].checked ) 
+     boxCheck = true;
+  }
+      if( ! boxCheck )
+	{ 
+  msg=msg+"=> Select Gender \n";
+	}
+x=document.form1.email.value;
+var at=x.indexOf("@");
+var dot=x.indexOf(".");
+if(x=="" ||x==null ||at==-1 ||dot==-1 ||at==0 ||dot==0 )
+{
+msg=msg+"=> Invalid Email address \n";
+}
+x=document.form1.phone.value;
+var y=document.form1.phone.length;
+if(x==null || x=="" ||isNaN(x) || y<10)
+{
+msg=msg+"=> Phone Number\n";
+}
+x=document.form1.password.value;
+var y=document.form1.confrim.value;
+if(x=="" ||x==null ||x!=y)
+{
+msg=msg+"=> Password is not Match\n";
+}
+if(msg!=msg1)
+alert(msg);
+else
+alert("form is valid");
+
+}
+</script>
+</head>
+<body>
+
+<table width="1350" border="0">
+  <tr>
+    <td width="194" scope="col">&nbsp;</td>
+    <td width="928" scope="col">
+	<table cellspacing=15  width=100% >
+<div align=right>
+<tr>
+<td  colspan=2>
+<h1>TravelAgency.com
+</h1></td>
+<td><div align=right><a href=login.html>Sign in</a>(india) <img src=flag.jpg alt=Logo hight=30 width=30></div></td>
+<td><div align=right><img src=call.jpg alt=Logo hight=35 width=35>Tell No<br>1860-300-10101</div></td>
+</tr>
+<tr>
+<td colspan=4>
+<div id='cssmenu'>
+<ul>
+  
+ <li class='active'><a href='index.html'><span>Home</span></a></li>
+  
+ <li class='has-sub'><a href='reserve.html'><span>Resrvation</span></a>
+      
+<ul>
+        
+ <li><a href='bus.html'><span>Bus</span></a></li>
+        
+ <li class='last'><a href='train.html'><span>Train</span></a></li>
+     
+ <li><a href='flight.html'><span>Flight</span></a></li>
+ </ul>
+   </li>
+   
+ <li class='has-sub'><a href='cancel.html'><span>Cancellation</span></a>
+     
+ <ul>
+         <li><a href='buscancel.html'><span>Bus</span></a></li>
+        
+ <li class='last'><a href='traincancel.html'><span>Train</span></a></li>
+     
+ <li><a href='flightcancel.html'><span>Flight</span></a></li>
+ </ul>
+   </li>
+<li class='has-sub'><a href='taxi.html'><span>Taxi</span></a>
+     
+ <ul>
+         <li><a href='taxireserve.html'><span>Reserve</span></a></li>
+       
+  <li class='last'><a href='taxicancel.html'><span>Cancel</span></a></li>
+      </li>
+ </ul>
+   </li>
+<li><a href='about.html'><span>About</span></a></li>
+  
+ <li class='last'><a href='contact.html'><span>Contact</span></a></li>
+</ul>
+
+</div>
+
+</tr>
+</div>
+</table >
+    </td>
+    <td width="206" scope="col">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>   <center><h1>REGISTRATION FORM</H1></center><br><hr>
+<center>
+<form name=form1 onsubmit="return validateForm()" action=registration1.php method=post>
+<table  width=100% border=0>
+<tr>
+<TD>First Name:</td><td><input type=text name=first></td>
+</tr>
+<tr>
+<TD>Last Name:</td><td><input type=text name=last></td>
+</tr>
+<tr>
+<TD>Login ID:</td><td><input type=text name=id></td>
+</tr>
+<tr>
+<td>Gender</td><td><input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="female">Female</td>
+</tr>
+<tr>
+<td>Address:</td><td><textarea rows="4" cols="50" name=address></textarea></td>
+</tr>
+<tr>
+<td>E-mail:</td><td><input type=text name="email" size=20></td>
+</tr>
+<tr>
+<td>Mobile Phone:</td><td>+91<input type=text name="phone" size=20 maxsize=13></td>
+</tr>
+<tr>
+<td>Password:</td><td><input type=password name=password></td>
+</tr>
+<tr>
+<td>Confrim Password:</td><td><input type=password name=confrim></td>
+</tr>
+</table>
+
+<input type=submit value="click me" >
+<input type=reset value=Reset>
+</center>
+</form>            </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

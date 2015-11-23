@@ -1,0 +1,178 @@
+<html>
+<head>
+<Title>Travel Agency</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	
+<link rel='stylesheet' type='text/css' href='styles.css' />
+	
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	
+<script type='text/javascript' src='menu_jquery.js'></script>
+
+
+</style>
+<script type="text/javascript">
+function makeNum(txtval)
+{
+if(isNaN(txtval.value)==true)
+{
+window.alert("Enter only number");
+txtval.value="";
+}
+else
+{window.alert("your ticket has been canceled");
+window.open("main.html");
+}
+}
+
+
+
+</script>
+
+
+<script type="text/javascript" >
+
+function formValidation(oEvent) { 
+oEvent = oEvent || window.event; 
+var txtField = oEvent.target || oEvent.srcElement; 
+
+var t1ck=true;
+var msg=" ";
+if(document.getElementById("t1").value.length < 3 ){ t1ck=false; msg }
+
+//alert(msg + t1ck);
+
+if(t1ck){document.getElementById("cancel").disabled = false; }
+else{document.getElementById("cancel").disabled = true; }
+} 
+
+function resetForm(){
+document.getElementById("cancel").disabled = true; 
+var frmMain = document.forms[0]; 
+frmMain.reset();
+}
+
+window.onload = function () { 
+
+var cancel = document.getElementById("cancel"); 
+var reset = document.getElementById("reset"); 
+
+var t1 = document.getElementById("t1"); 
+
+var t1ck=false;
+document.getElementById("cancel").disabled = true;
+t1.onkeyup = formValidation; 
+reset.onclick = resetForm;
+}
+</script>
+
+</head>
+<body>
+
+<table width="1350" border="0">
+  <tr>
+    <td width="194" scope="col">&nbsp;</td>
+    <td width="928" scope="col">
+	<table cellspacing=15  width=100% >
+<div align=right>
+<tr>
+<td  colspan=2>
+<h1>TravelAgency.com
+</h1></td>
+<td><div align=right><a href=login.html>Sign in</a>(india) <img src=flag.jpg alt=Logo hight=30 width=30></div></td>
+<td><div align=right><img src=call.jpg alt=Logo hight=35 width=35>Tell No<br>1860-300-10101</div></td>
+</tr>
+<tr>
+<td colspan=4>
+<div id='cssmenu'>
+<ul>
+  
+ <li class='active'><a href='index.html'><span>Home</span></a></li>
+  
+ <li class='has-sub'><a href='reserve.html'><span>Resrvation</span></a>
+      
+<ul>
+        
+ <li><a href='bus.html'><span>Bus</span></a></li>
+        
+ <li class='last'><a href='train.html'><span>Train</span></a></li>
+     
+ <li><a href='flight.html'><span>Flight</span></a></li>
+ </ul>
+   </li>
+   
+ <li class='has-sub'><a href='cancel.html'><span>Cancellation</span></a>
+     
+ <ul>
+         <li><a href='buscancel.html'><span>Bus</span></a></li>
+        
+ <li class='last'><a href='traincancel.html'><span>Train</span></a></li>
+     
+ <li><a href='flightcancel.html'><span>Flight</span></a></li>
+ </ul>
+   </li>
+<li class='has-sub'><a href='taxi.html'><span>Taxi</span></a>
+     
+ <ul>
+         <li><a href='taxireserve.html'><span>Reserve</span></a></li>
+       
+  <li class='last'><a href='taxicancel.html'><span>Cancel</span></a></li>
+      </li>
+ </ul>
+   </li>
+<li><a href='about.html'><span>About</span></a></li>
+  
+ <li class='last'><a href='contact.html'><span>Contact</span></a></li>
+</ul>
+
+</div>
+
+</tr>
+</div>
+</table >
+    </td>
+    <td width="206" scope="col">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>   
+<table width=100%>
+<tr>
+<td><img src=4.jpg width=250 height=200></td>
+<td><img src=5.jpg width=250 height=200></td>
+<td><img src=6.jpg width=250 height=200></td>
+</tr>
+</table>
+           </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+ <form name=cancel action="canceldetail.php" method=post>      
+<br>
+<center><font color="red" font="6">Ticket Number :
+&nbsp;&nbsp;<input type="text"  size="12" maxlength="12" id="t1" name="ticketnum" title="Enter your ticket number" onChange=makeNum(document.form3.ticketnum);><br><br>
+<input type="submit" value="Cancel Ticket"  id="cancel"   onClick="return checkEmpty">  &nbsp;&nbsp;&nbsp;
+
+<input type=reset value=" Reset   "  id=reset>
+<br><br><br>
+
+<img src="cancel.jpg" height="100" width="200">
+
+</form>
+</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
